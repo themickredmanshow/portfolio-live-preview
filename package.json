@@ -1,0 +1,39 @@
+{
+  "name": "portfolio-live-preview",
+  "displayName": "Portfolio Live Preview",
+  "description": "Starts Five Server and shows the site in a panel beside the editor.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "extensionDependencies": [
+    "yandeu.five-server"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "portfolioPreview.start",
+        "title": "Portfolio Preview: Start Server and Show Preview"
+      },
+      {
+        "command": "portfolioPreview.show",
+        "title": "Portfolio Preview: Show Preview"
+      }
+    ],
+    "configuration": {
+      "title": "Portfolio Live Preview",
+      "properties": {
+        "portfolioPreview.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Start Five Server and open the live preview panel automatically when this workspace opens."
+        }
+      }
+    }
+  }
+}
